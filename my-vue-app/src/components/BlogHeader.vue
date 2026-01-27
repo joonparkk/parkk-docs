@@ -26,19 +26,19 @@
 <style lang="scss" scoped> 
 header{
     display:flex;
-    background-color: aquamarine;
+    background-color: rgb(189, 187, 187);
     align-items: center;
     justify-content: space-between;
-    padding: 25px 16px;
+    padding: 15px 16px;
     .logo{
         display:flex;
         img{
-            max-width: 100px;
+            max-width: 80px;
         }
     }
     .intro{
         h1{
-            font-size: 45px;
+            font-size: 40px;
         }
         h2{
             text-align: center;
