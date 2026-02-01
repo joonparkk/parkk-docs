@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import ExpandableLog from '@/components/ExpandableLog.vue';
 import { Button } from '@/components/ui/button';
 import { reactive } from 'vue';
 const logState = reactive({
@@ -14,9 +15,9 @@ function toggle(){
 <template>
     <div class="LogFolder">
         <Button @click="toggle"
-        class = "logEntry"
-        :class="{'h-200 duration-400': logState.isExpanded}"
-        >Entry 1</Button>
+        class = "logEntry bg-black-300 h-15 rounded-none"
+        >Welcome to Parkk Docs</Button>
+        <ExpandableLog :isExpanded = "logState.isExpanded" />
     </div>
 </template>
 
@@ -28,6 +29,7 @@ div{
         flex-direction: column;
         flex: 1 1 auto;
         height: 100%;
+        background-color:black
     }
     .logEntry{
         border: 1px solid red;
