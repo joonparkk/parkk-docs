@@ -10,17 +10,25 @@
 
 
         <nav>
-            <ul class="nav-routes">
+            <div class="nav-routes">
                 <router-link v-if="currentRoute.name !== 'home'" :to="{name: 'home'}">Home</router-link>
                 <router-link v-if="currentRoute.name !== 'about'" :to="{name: 'about'}">About</router-link>
-            </ul>
+                <Button @click="showBlogForm = true">Create Post</Button>
+            </div>
         </nav>
+        <BlogFormModal v-if="showBlogForm" @close="showBlogForm = false"/>
     </header>
 </template>
 
 <script setup>
     import {RouterLink, useRoute} from 'vue-router';
+    import { ref } from 'vue';
+    import Button from '@/components/ui/button/Button.vue';
+    import BlogFormModal from './BlogFormModal.vue';
     const currentRoute = useRoute()
+
+    const showBlogForm = ref(false)
+
 </script>
 
 <style lang="scss" scoped> 
@@ -48,6 +56,7 @@ header{
         .nav-routes{
             display:flex;
             flex-direction: column;
+            align-items: center;
             gap:25px;
         }
     }
